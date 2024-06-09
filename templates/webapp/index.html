@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Diini Omar - Portfolio</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="assets/img/Dcs.png" rel="icon">
+    <link href="assets/img/Dcs.png" rel="icon">
+    <link href="assets/img/Dcs.png" rel="dcs-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+  <!-- Vendor CSS Files -->
+<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+<!-- Bootstrap JS File -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
+</head>
+<body>
+    <!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+<div class="container d-flex align-items-center justify-content-between">
+<nav class="navbar sticky-top bg-body-tertiary">
+    <div class="container-fluid">
+   
+      <ul>
+        <li><a class="nav-link scrollto" href="#home">Diini Omar</a></li>
+        <li><a class="nav-link scrollto" href="#about">About</a></li>
+        <li><a class="nav-link scrollto" href="#Portfolio">Portfolio</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle d-none"></i>
+    </div>
+  </nav>
+</div>
+</header>
+    <!-- End Header -->
+
+<!--- About me-->
+<div class="main-container">
+    
+    <div class="video" id="home">
+    <h2>Diini Omar</h2>
+    <iframe width="700" height="545" src="https://player.vimeo.com/video/953633814?badge=0&amp;" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div class="avator" id="home">
+    <img src="{% static 'images/man3.png' %}" alt="Icon" >
+    <div class="text-typing">
+    <h3> I am an <span id="typing"></span> </h3>
+    </div>
+    <strong><p> Diini Omar, Based in London, UK, <br>Email: info@diiniomar.com <br>Phone: 07775 223329 </p></strong> 
+    <div class="icons">
+        <a href="https://www.linkedin.com/in/diiniomar/" > <i class="fa-brands fa-linkedin" > </i> </a>
+        <a href="https://github.com/diiniomar" > <i class="fa-brands fa-github"></i></a>
+    </div>
+    <div class="hire" id ="">
+        <button><a href="#contact"> Hire me </a></button> 
+    </div>
+
+</div>
+<!-- About Us section-->
+<div class="about" id="about">
+    <!-- <img src="{% static 'images/man.png' %}" alt="Icon" > -->
+    <div class="discription">
+        <h3>About me</h3>
+    <p> Are you looking for a dedicated and self-motivated Python full-stack developer who consistently exceeds company expectations?
+      I alway ask my manager what do you except from today? and I bring a proven track record of delivering high-quality solutions while fostering a collaborative work environment. With expertise in both back-end (Python, Django, REST Framework) and front-end (JavaScript, Bootstrap, CSS, HTML) technologies, I create robust applications. 
+    My proactive approach to code ownership and commitment to continuous improvement ensure enhanced productivity and minimized errors. Passionate about innovation and teamwork, I stay current with industry trends to bring fresh ideas to life. Hiring me means gaining a developer and a team player eager to embrace new challenges and drive your company’s success.
+    </p>
+
+
+
+    <!-- This is section is Jinja tag for loop --> 
+{% for resume in resumes %}
+<a href="{% url 'download_pdf' resume_id=resume.id %}" download> <button id="downloadLink" class="downloadButton">Download CV</button> </a>
+
+{% endfor %} 
+       
+    </div>
+</div>
+
+  <!-- Progress bar-->
+  <div class="skills">
+    <h3>My skills</h3>
+    <div class="progress-cont">
+        <div class="progress" role="progressbar" aria-label="Html example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: 65%"> JS 65% </div>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Css example" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-dark" style="width: 80%"> Css | Bootstrap 80% </div>
+        </div>
+        <div class="progress" role="progressbar" aria-label="Js example" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-purple" style="width: 85%"> Html 85% </div>
+        </div>
+        <div class="progress" role="progressbar" aria-label="React example" aria-valuenow="70" aria-valuemin="0" aria-valuemax="90">
+            <div class="progress-bar bg-blue" style="width: 87%"> Python | Django 87%</div>
+        </div>
+    </div>
+</div>
+<!-- Services-->
+<h2 class="text-item"> Portfolio </h2>
+<div class="services item" id="Portfolio">
+    <div class="card" style="width: 20rem;">
+        <img src="{% static 'images/crm.png' %}" alt="Card" >
+        <div class="card-body">
+          <h5 class="card-title">Website</h5>
+          <p class="card-text">I have created many impressive websites using Python and Django, Css, Bootstrap including my own, with database storing information.</p>
+          <a href="https://github.com/DiiniOmar" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <img src="{% static 'images/eccom.png' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Custom System</h5>
+          <p class="card-text">I like problem solving and continually tackle challenges, developing numerous impressive custom CRMs using Python, Django, and Bootstrap.</p>
+          <a href="https://github.com/DiiniOmar/Customers-CRM-System" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <img src="{% static 'images/web.png' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Eccomerce</h5>
+          <p class="card-text">I thrive on uncertainty, relishing the creative process of problem-solving, especially when using Python and Django to craft innovative solutions.</p>
+          <a href="https://github.com/DiiniOmar" class="btn btn-primary">Learn more</a>
+        </div>
+      </div>
+</div>
+
+</div>
+
+
+<!-- Start Contact form-->
+
+
+ <h3 class="contact-title"> Contact us</h3>
+ <div class="contacts" id="contact" >
+     <form action="{% url 'contact' %}" method="post">
+         {% csrf_token %}
+       
+         <div class="form-group">
+             <label for="name ">Name</label>
+             <input type="text" id="name" name="name" placeholder="Enter full name" required>
+         </div>
+         <div class="form-group">
+             <label for="email">Email</label>
+             <input type="email" id="email" name="email" placeholder="Enter your email" required>
+         </div>
+         <div class="form-group">
+             <label for="email">Subject</label>
+             <input type="text" id="subject" name="subject" placeholder="Enter the subject">
+         </div>
+         <div class="form-group">
+             <label for="email">Message</label>
+             <textarea name="message" id="message" placeholder="Please type your message here" required></textarea>  
+         </div>
+         <button type="submit" class="btn">Submit</button>
+
+         
+     
+      </form>
+
+ </div>
+
+<!-- End Contact form-->
+        
+  </div>
+</div>
+
+  <script src="{% static 'js/main.js' %}"></script>
+    
+</body>
+</html>
